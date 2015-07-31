@@ -103,9 +103,9 @@
     // Restores this model's attributes to
     // their original values since tracking
     // started, the last save, or last restart.
-    resetAttributes: function() {
+    resetAttributes: function(options) {
       if (!this._trackingChanges) return;
-      this.attributes = this._originalAttrs;
+      this.set(this._originalAttrs, [options]);
       this._resetTracking();
       this._triggerUnsavedChanges();
       return this;
